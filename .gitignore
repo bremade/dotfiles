@@ -1,17 +1,16 @@
 # Ignore everything
 *
 
-### i3 window manager ###
-!/.config
-!/.config/i3
-!/.config/i3/config
-!/.config/i3/power.sh
-!/.config/i3/i3status.conf
-
-### rofi ###
-!/.config
-!/.config/rofi
-!./config/rofi/arc_dark.rasi
-
 ### .gitignore ###
 !.gitignore
+
+### i3 window manager ###
+!.config
+!.config/i3
+!.config/i3/config
+!.config/i3/power.sh
+!.config/i3/i3status.conf
+
+### rofi ###
+!.config/rofi
+!.config/rofi/arc_dark.rasi
