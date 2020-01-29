@@ -14,3 +14,18 @@
 ### rofi ###
 !.config/rofi
 !.config/rofi/arc_dark.rasi
+
+### oh my zsh ###
+!.oh-my-zsh
+!.oh-my-zsh/custom
+!.oh-my-zsh/custom/themes
+!.oh-my-zsh/custom/themes/spaceship.zsh-theme
+!.oh-my-zsh/custom/themes/spaceship-prompt
+!.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme
+!.oh-my-zsh/custom/themes/spaceship-prompt/sections
+!.oh-my-zsh/custom/themes/spaceship-prompt/sections/battery.zsh
+!.oh-my-zsh/custom/themes/spaceship-prompt/sections/dir.zsh
+!.oh-my-zsh/custom/themes/spaceship-prompt/sections/git*.zsh
+!.oh-my-zsh/custom/themes/spaceship-prompt/sections/time.zsh
+!.oh-my-zsh/custom/themes/spaceship-prompt/sections/user.zsh
+!.oh-my-zsh/custom/themes/spaceship-prompt/sections/package.zsh
