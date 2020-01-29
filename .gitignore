@@ -3,6 +3,7 @@
 
 ### General Root Files ###
 !.gitignore
+!.zshrc
 
 ### i3 window manager ###
 !.config
