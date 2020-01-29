@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Datagrip
+Comment=Datagrip
+Exec=/opt/Datagrip/bin/datagrip.sh %f
+Icon=/opt/Datagrip/bin/product.png
+Type=Application

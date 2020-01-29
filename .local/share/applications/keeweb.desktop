@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=KeeWeb
+Comment=KeeWeb
+Exec=/opt/KeeWeb/KeeWeb
+Icon=/opt/KeeWeb/128x128.png
+Type=Application
