@@ -1,0 +1,237 @@
+##=================================================##
+#             *** Superkey settings ***             #
+##=================================================##
+set $mod Mod4
+
+##=================================================##
+#           *** Font specific settings ***          #
+##=================================================##
+font pango:DejaVu Sans Mono, Awesome 8
+
+##=================================================##
+#         *** Shutdown/Suspend settings ***         #
+##=================================================##
+bindsym $mod+l exec "bash /home/bremauer/.config/i3/power.sh"
+
+##=================================================##
+#             *** Movement settings ***             #
+##=================================================##
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+##=================================================##
+#      *** Programmstart specific settings ***      #
+##=================================================##
+# start a terminal
+bindsym $mod+Return exec gnome-terminal
+
+##=================================================##
+#         *** Binding specific settings ***         #
+##=================================================##
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start programmlauncher
+bindsym $mod+d exec "rofi -show drun -show-icons -theme arc_dark.rasi"
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+i focus up
+bindsym $mod+odiaeresis focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+i move up
+bindsym $mod+Shift+odiaeresis move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left move left
+bindsym $mod+Right move right
+
+# split in horizontal orientation
+bindsym $mod+Up split h
+
+# split in vertical orientation
+bindsym $mod+Down split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# ScreenShots
+bindsym Shift+Print exec gnome-screenshot -a
+bindsym Print exec gnome-screenshot
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# change workspace
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# Sound control
+bindsym XF86AudioRaiseVolume exec --no-startup-id pulseaudio-ctl up
+bindsym XF86AudioLowerVolume exec --no-startup-id pulseaudio-ctl down
+bindsym XF86AudioMute exec --no-startup-id pulseaudio-ctl mute
+
+# Screen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+
+# Multi media controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl pr
+
+##=================================================##
+#        *** Workspace specific settings ***        #
+##=================================================##
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1: "
+set $ws2 "2: "
+set $ws3 "3: "
+set $ws4 "4: "
+set $ws5 "5: "
+set $ws6 "6: "
+set $ws7 "7: "
+set $ws8 " 8 "
+set $ws9 " 9 "
+set $ws10 " 10 "
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+##=================================================##
+#       *** Configreload specific settings ***      #
+##=================================================##
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+##=================================================##
+#         *** Resize specific settings ***          #
+##=================================================##
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym i resize shrink height 10 px or 10 ppt
+        bindsym odiaeresis resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Right resize shrink width 10 px or 10 ppt
+        bindsym Up resize grow height 10 px or 10 ppt
+        bindsym Down resize shrink height 10 px or 10 ppt
+        bindsym Left resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+##=================================================##
+#        *** Window specific settings ***           #
+##=================================================##
+# No titlebar and no border
+for_window [class="^.*"] border pixel 1
+
+# Windowcolors		border	backgr.	text	indic.	chilb.
+client.focused		#912c31 #912c31 #1E080A #ffffff #912c31
+client.focused_inactive #1E080A #1E080A #912c31 #ffffff #1E080A
+client.unfocused	#1E080A #1E080A #912c31 #ffffff #1E080A
+
+##=================================================##
+#         *** I3Bar specific settings ***           #
+##=================================================##
+# I3Bar settings
+bar {
+	status_command i3status -c ~/.config/i3/i3status.conf
+	colors {
+		background #121212
+		statusline #ffffff
+		separator #ffffff
+		
+		focused_workspace  #912c31 #912c31 #ffffff
+		active_workspace   #912c31 #912c31 #ffffff
+		inactive_workspace #1E080A #1E080A #888888
+		urgent_workspace   #912c31 #912c31 #ffffff
+		binding_mode       #912c31 #912c31 #ffffff
+	}
+	font pango:DejaVu Sans Mono, Awesome 10
+}
+
+##=================================================##
+#       *** Workspace specific settings ***         #
+##=================================================##
+# Assign Workspaces:
+# --Workspace 1 | Terminal--
+assign [class="Gnome-terminal"] $ws1
+
+# --Workspace 2 | Web/Social--
+assign [class="Google-chrome"] $ws2
+assign [class="Signal"] $ws2
+
+# --Workspace 3 | Coding--
+assign [class="jetbrains-idea"] $ws3
+assign [class="Code"] $ws3
+assign [class="TeXstudio"] $ws3
+
+# --Workspace 4 | Filemanager--
+assign [class="Org.gnome.Nautilus"] $ws4
+
+# --Workspace 5 | VOIP--
+assign [class="TeamSpeak 3"] $ws5
+
+# --Workspace 6 | Games--
+assign [class="minecraft-launcher"] $ws6
+assign [class="Steam"] $ws6
+
+# --Workspace 7 | Kee--
+assign [class="KeeWeb"] $ws7
