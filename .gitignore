@@ -20,8 +20,6 @@
 !.local
 !.local/share
 !.local/share/applications
-!.local/share/applications/datagrip.desktop
-!.local/share/applications/vsc.desktop
 
 ### oh my zsh ###
 !.oh-my-zsh
