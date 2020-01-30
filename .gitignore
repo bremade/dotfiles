@@ -20,7 +20,6 @@
 !.local
 !.local/share
 !.local/share/applications
-!.local/share/applications/keeweb.desktop
 !.local/share/applications/datagrip.desktop
 !.local/share/applications/vsc.desktop
 
