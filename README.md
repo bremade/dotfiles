@@ -35,6 +35,15 @@ Install zsh
 sudo apt install zsh
 ```
 
+Install fontawesome icons
+```
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
+```
+
 Install oh-my-zsh
 ```
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
