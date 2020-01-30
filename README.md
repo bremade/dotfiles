@@ -33,10 +33,13 @@ sudo apt install rofi
 Install zsh
 ```
 sudo apt install zsh
+Set background to #282b34
 ```
 
-Install fontawesome icons
+Install fonts
 ```
+sudo apt install fonts-font-awesome
+
 git clone https://github.com/powerline/fonts.git --depth=1
 cd fonts
 ./install.sh
