@@ -18,28 +18,20 @@ git clone git@github.com:sirarzelot/dotfiles.git
 
 ## Set up Linux
 
+Install needed packages
+```
+sudo apt install git i3 rofi zsh fonts-font-awesome grub-customizer
+```
+
 Clone dotfiles
 
-Install i3
+Set up Zsh
 ```
-sudo apt install i3
-```
-
-Install rofi
-```
-sudo apt install rofi
-```
-
-Install zsh
-```
-sudo apt install zsh
 Set background to #282b34
 ```
 
 Install fonts
 ```
-sudo apt install fonts-font-awesome
-
 git clone https://github.com/powerline/fonts.git --depth=1
 cd fonts
 ./install.sh
@@ -93,4 +85,13 @@ done
 
 echo "fc-cache -f"
 fc-cache -f
+```
+
+Set up grub
+```
+git clone git@github.com:vinceliuice/grub2-themes.git
+cd grub2-themes
+sudo bash ./install.sh -t
+cd ..
+rm -rf grub2-themes
 ```
