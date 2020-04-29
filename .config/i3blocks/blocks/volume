@@ -1,6 +1,13 @@
 #!/bin/bash
 
-VOLUME=$(awk -F"[][]" '/dB/ { print $2 }' <(amixer sget Master))
+VOLUME=$(amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }')
+STEP="${1:-5%}"
+
+case $BLOCK_BUTTON in
+  3) amixer -q -D pulse sset Master $(capability) toggle ;;  # right click, mute/unmute
+  4) amixer -q -D pulse sset Master $(capability) ${STEP}+ unmute ;; # scroll up, increase
+  5) amixer -q -D pulse sset Master $(capability) ${STEP}- unmute ;; # scroll down, decrease
+esac
 
 if [[ "$VOLUME" != "0%" ]]; then
   echo $VOLUME
