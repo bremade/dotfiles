@@ -10,8 +10,17 @@
 !.config/i3
 !.config/i3/config
 !.config/i3/power.sh
-!.config/i3/i3status.conf
+!.config/i3/i3status
 
+!.config/i3blocks
+!.config/i3blocks/i3blocks.conf
+!.config/i3blocks/blocks
+!.config/i3blocks/blocks/battery
+!.config/i3blocks/blocks/bitrate
+!.config/i3blocks/blocks/date
+!.config/i3blocks/blocks/time
+!.config/i3blocks/blocks/volume
+!.config/i3blocks/blocks/wifi
 ### rofi ###
 !.config/rofi
 !.config/rofi/arc_dark.rasi

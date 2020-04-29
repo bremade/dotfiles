@@ -1,0 +1,10 @@
+#!/bin/bash
+
+DOWNLOAD=$(iw dev wlp59s0 link | grep "rx bitrate" | awk '{print $3}')
+UPLOAD=$(iw dev wlp59s0 link | grep "tx bitrate" | awk '{print $3}')
+
+if [[ $BLOCK_BUTTON == 3 ]]; then
+    echo $DOWNLOAD Mb/s  $UPLOAD Mb/s
+else
+    echo $DOWNLOAD Mb/s
+fi

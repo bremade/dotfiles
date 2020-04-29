@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+
+# rofi-calendar: A pop-up calendar for i3blocks.
+# Requirements:
+#   - rofi (oxide theme)
+#   - i3blocks
+#   - bash
+#   - bsdmainutils (ncal/cal)
+#   - coreutils (date)
+#   - sed
+
+full_date=$(date '+%d.%m.%Y')
+day_number=${full_date:0:2}
+month_number=${full_date:3:2}
+year_number=${full_date:6:4}
+
+cal_command() {
+    ncal -bhS "$month_number" "$year_number" | sed '1d;s/ *$//g;/^$/d'
+}
+
+custom_month() {
+    day_number='Null'
+    the_date=$(date -d "+%d.%m.%Y")
+}
+
+counts_cal_lines() {
+    cal_lines=$(cal_command | wc -l)
+}
+
+case "$BLOCK_BUTTON" in
+    1|2|3)
+        the_date=$(date '+%d, %B %Y')
+        ;;
+esac
+
+case "$BLOCK_BUTTON" in
+    1|2|3)
+        counts_cal_lines
+        cal_command \
+            | sed "s#^#<span color='\#f17171'>#g;s#.#&</span>#24" \
+            | sed "s#\b${day_number// /}\b#<span bgcolor='\#2b83a6' color='\#ffffff'>${day_number// /}</span>#" \
+            | rofi \
+                -dmenu \
+                -width '-21' \
+                -lines "$cal_lines" \
+                -font 'Monospace 10' \
+                -location '5' \
+                -xoffset '-15' \
+                -yoffset '-24' \
+                -theme-str 'configuration { show-icons: false; }' \
+                -theme-str 'window { fullscreen: false; } inputbar { children: [ prompt ]; } listview { scrollbar: false; }' \
+                -theme-str 'element normal.normal, element selected.normal, element alternate.normal { background-color: #454859; text-color: #c4cad4; }' \
+                -theme-str 'element normal.active, element selected.active, element alternate.active { background-color: #454859; text-color: #f9f9f9; }' \
+                -p "$the_date" \
+                -a '0' \
+                -no-custom \
+                -markup-rows &> /dev/null
+        ;;
+esac
+
+echo "${full_date}"

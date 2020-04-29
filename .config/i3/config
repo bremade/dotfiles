@@ -193,7 +193,8 @@ client.unfocused	#1E080A #1E080A #912c31 #ffffff #1E080A
 ##=================================================##
 # I3Bar settings
 bar {
-	status_command i3status -c ~/.config/i3/i3status.conf
+	#status_command i3status -c ~/.config/i3/i3status.conf
+	status_command i3blocks	-c ~/.config/i3blocks/i3blocks.conf
 	colors {
 		background #121212
 		statusline #ffffff
@@ -222,6 +223,7 @@ assign [class="Firefox"] $ws2
 # --Workspace 3 | Coding--
 assign [class="jetbrains-idea"] $ws3
 assign [class="Code"] $ws3
+assign [class="jetbrains-studio"] $ws3
 assign [class="TeXstudio"] $ws3
 
 # --Workspace 4 | Filemanager--
