@@ -16,7 +16,8 @@
 !.config/i3blocks/i3blocks.conf
 !.config/i3blocks/blocks
 !.config/i3blocks/blocks/battery
-!.config/i3blocks/blocks/bitrate
+!.config/i3blocks/blocks/bitrateWifi
+!.config/i3blocks/blocks/bitrateLan
 !.config/i3blocks/blocks/date
 !.config/i3blocks/blocks/time
 !.config/i3blocks/blocks/volume
