@@ -102,7 +102,10 @@ Set up grub
 ```
 git clone git@github.com:vinceliuice/grub2-themes.git
 cd grub2-themes
+// Laptop
 sudo bash ./install.sh -t
+// Desktop
+sudo bash ./install.sh -t -2
 cd ..
 rm -rf grub2-themes
 ```
