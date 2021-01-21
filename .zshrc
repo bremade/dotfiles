@@ -1,10 +1,11 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-feh --randomize --bg-fill ~/Pictures/Backgrounds/*
+feh --randomize --bg-fill ~/Pictures/Backgrounds/*.jpg
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/bremauer/.oh-my-zsh"
+export PATH=/home/bremauer/Android/Sdk/flutter/bin:$PATH
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
